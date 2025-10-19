@@ -1,19 +1,18 @@
 # PEVM Converter — Polkadot ↔ Ethereum Address Tool
 
-![App Screenshot](/images/screenshot1.png)
+
+![Screenshot](public/images/screenshot1.png)
 
 ---
-
 ## Overview
 
 PEVM Converter is a lightweight web tool that converts between Polkadot/Substrate (SS58) and Ethereum (0x) addresses.
 
 It uses official Polkadot.js cryptographic utilities to ensure every conversion is accurate, reversible, and chain-compatible, just like Moonbeam, Astar, and other EVM-compatible Substrate networks.
 
-The interface is built with React and TailwindCSS, designed to be clean, minimal, and modern, with branding by Tech Angel X.
+The interface is built with React and TailwindCSS, designed to be clean, minimal, and modern, with branding.
 
 ---
-
 ## Features
 
 - Two-way conversion between Polkadot SS58 and Ethereum 0x formats  
@@ -24,17 +23,11 @@ The interface is built with React and TailwindCSS, designed to be clean, minimal
 - Runs locally or on any static host (Vite / React app)
 
 ---
-
-## Screenshot
-
-![Screenshot](/images/screenshot1.png)
-
----
-
 ## Tech Stack
 
 - React — Component-based UI  
-- TailwindCSS — Styling and layout  
+- TailwindCSS — Styling and layout 
+- Inter — Modern, geometric sans-serif font for clean UI
 - @polkadot/util and @polkadot/util-crypto — Address conversion  
 - Vite — Development and build tool  
 
@@ -61,7 +54,7 @@ Direction	Input Example	Output Example
 Polkadot → EVM	148CkH8YBzA1pbudK1bMo2zUMHZwbucBVH8s3utwTS687UiR	0x8a32f59713f0a129fbc395dbc853f51ab53d45d1
 EVM → Polkadot	0x2afe75c81f3a70e4d35c0028d39e5965b9b4efed	5G9tenfErXkSpinEaqzLyoWxystrLo4YZYGwMcXmD9FhnYrL
 
-Conversions are exactly reversible, using:
+Conversions are performed using:
 
 addressToEvm(ss58Address) → returns EVM-compatible bytes
 
@@ -82,13 +75,7 @@ pevm/
 │   └── index.css
 ├── package.json
 └── README.md
-Branding
-This project includes a small signature block:
 
-Tech Angel X
-by Ricki Angel
-
-with your logo (/public/images/logo.png) pinned to the top-left corner of the app.
 
 License
 This project is provided as open source under the MIT License.
