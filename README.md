@@ -1,93 +1,96 @@
-cat > README.md << 'EOF'
-# Regressify
+# PEVM Converter — Polkadot ↔ Ethereum Address Tool
 
-### Interactive Regression Visualization Tool
-
-**A visual salary prediction tool comparing regression methods, to help * understand machine learning regression models through real-world salary predictions**
-
-<div align="center">
-
-![Regressify Screenshot](./public/images/screenshot1.png)
-
-[![React](https://img.shields.io/badge/React-18.x-61dafb?style=for-the-badge&logo=react&logoColor=white)](https://reactjs.org/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.x-38bdf8?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Recharts](https://img.shields.io/badge/Recharts-2.x-8884d8?style=for-the-badge)](https://recharts.org/)
-[![Vite](https://img.shields.io/badge/Vite-5.x-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-
-[View Demo](#) • [Report Bug](#) • [Request Feature](#)
-
-</div>
+![App Screenshot](/images/screenshot1.png)
 
 ---
 
-## About The Project
+## Overview
 
-**Regressify** is an educational web application that makes machine learning regression models easy to understand through interactive visualizations. Built for students, educators, and data science enthusiasts, it demonstrates how different regression algorithms predict tech salaries based on years of experience.
+PEVM Converter is a lightweight web tool that converts between Polkadot/Substrate (SS58) and Ethereum (0x) addresses.
 
-### Why Regressify?
+It uses official Polkadot.js cryptographic utilities to ensure every conversion is accurate, reversible, and chain-compatible, just like Moonbeam, Astar, and other EVM-compatible Substrate networks.
 
-- **Visual Learning**: See how each model works in real-time
-- **Real-World Context**: Uses realistic salary data with natural variation (±£10k noise)
-- **Comparative Analysis**: Switch between 4 models instantly to understand their differences
-- **No Black Box**: Every model includes detailed explanations of how it works, when to use it, and its trade-offs
+The interface is built with React and TailwindCSS, designed to be clean, minimal, and modern, with branding by Tech Angel X.
 
 ---
 
 ## Features
 
-### Four Regression Models
+- Two-way conversion between Polkadot SS58 and Ethereum 0x formats  
+- Uses @polkadot/util-crypto for true cryptographic conversions  
+- Accurate and reversible mapping  
+- Modern UI with Inter font and glass-style panels  
+- Custom branding with logo and signature in the top-left corner  
+- Runs locally or on any static host (Vite / React app)
 
-| Model | Best For | Visual Pattern |
-|-------|----------|----------------|
-| **Linear Regression** | Simple relationships, small datasets | Straight diagonal line |
-| **Polynomial Regression** | Career growth curves, natural plateaus | Smooth curve that flattens |
-| **Decision Tree** | Clear rules, HR salary bands | Horizontal steps/stairs |
-| **Neural Network** | Complex patterns, hidden factors | Wavy curve with oscillations |
+---
 
-### Interactive Features
+## Screenshot
 
-- **Live Chart Updates** - Click any model to see predictions instantly
-- **Expandable Details** - Show/hide technical explanations with one click
-- **Real Data Simulation** - Each reload generates new realistic salary data
-- **Educational Content** - Pros, cons, and real-world examples for each model
-- **Smooth Animations** - Beautiful transitions and gradients
-
-### Additional Concepts Explained
-
-- **Ridge Regression** - How to handle 50+ features without overfitting
-- **Lasso Regression** - Automatic feature selection that eliminates weak factors
-- **Noise & Variance** - Why real-world predictions scatter around the trend line
-- **Model Trade-offs** - Understanding when each algorithm shines
+![Screenshot](/images/screenshot1.png)
 
 ---
 
 ## Tech Stack
 
-- **React 18** - Modern UI framework with hooks
-- **Vite** - Lightning-fast build tool and dev server
-- **Tailwind CSS 3** - Utility-first styling framework
-- **Recharts** - Composable charting library built on React components
-- **JavaScript (ES6+)** - Modern ECMAScript features
+- React — Component-based UI  
+- TailwindCSS — Styling and layout  
+- @polkadot/util and @polkadot/util-crypto — Address conversion  
+- Vite — Development and build tool  
 
 ---
 
-## Getting Started
+## Installation
 
-### Prerequisites
-
-- Node.js 16+ and npm installed
-- Basic understanding of React (helpful but not required)
-
-### Installation
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/regressify.git
+# Clone the project
+git clone https://github.com/yourusername/pevm-converter.git
 
-# Navigate to project directory
-cd regressify
+# Go to the project folder
+cd pevm-converter
 
 # Install dependencies
 npm install
 
-# Start development server
+# Start the development server
 npm run dev
+Then open your browser and visit http://localhost:5173 (or the port shown in your terminal).
+
+How It Works
+Direction	Input Example	Output Example
+Polkadot → EVM	148CkH8YBzA1pbudK1bMo2zUMHZwbucBVH8s3utwTS687UiR	0x8a32f59713f0a129fbc395dbc853f51ab53d45d1
+EVM → Polkadot	0x2afe75c81f3a70e4d35c0028d39e5965b9b4efed	5G9tenfErXkSpinEaqzLyoWxystrLo4YZYGwMcXmD9FhnYrL
+
+Conversions are exactly reversible, using:
+
+addressToEvm(ss58Address) → returns EVM-compatible bytes
+
+evmToAddress(0xAddress, 42) → returns SS58-format Substrate address
+
+File Structure
+pgsql
+Copy code
+pevm/
+├── public/
+│   ├── images/
+│   │   ├── logo.png
+│   │   └── screenshot1.png
+│   └── index.html
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+└── README.md
+Branding
+This project includes a small signature block:
+
+Tech Angel X
+by Ricki Angel
+
+with your logo (/public/images/logo.png) pinned to the top-left corner of the app.
+
+License
+This project is provided as open source under the MIT License.
+
+© 2025 Ricki Angel | Tech Angel X
